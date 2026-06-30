@@ -5,6 +5,7 @@ import Logo from './src/screens/logo/Logo';
 import SignUp from './src/screens/signUp/SignUp';
 import SignUpWith from './src/screens/signUpWith/SignUpWith';
 import Login from './src/screens/login/Login';
+import Home from './src/screens/home/Home';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignUpWith" component={SignUpWith} />
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );

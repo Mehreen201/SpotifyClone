@@ -43,6 +43,8 @@ export default function Login ({navigation}){
       onPress={() => {
       if (email === '') {
        setError(true);
+      }else{
+       navigation.navigate('Home');
       }
       }}>
         <Text style={[styles.buttonText, {color:'black'}]}>Continue</Text>
@@ -50,7 +52,7 @@ export default function Login ({navigation}){
  
       <Text style={styles.logInWithText}>Or log in with</Text>
 
-       <TouchableOpacity style={styles.button2}>
+       <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate('Home')}>
         <View style={styles.iconContainer}>
          <Image
          source={require('../../../assets/images/logo/google.png')}
@@ -62,7 +64,7 @@ export default function Login ({navigation}){
         </Text>
        </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button2}>
+        <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate('Home')} >
         <View style={styles.iconContainer}>
          <Image
          source={require('../../../assets/images/logo/Facebook.png')}
