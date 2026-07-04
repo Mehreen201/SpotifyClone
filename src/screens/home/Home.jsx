@@ -90,14 +90,7 @@ export default function Home() {
   return (
     <View style={styles.container}>
 
-      <FlatList
-        data={[{ id: "home" }]}
-        keyExtractor={(item) => item.id}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: 180 }}
-        renderItem={() => (
-          <>
-            {/* Header */}
+      {/* Header */}
 
             <View style={styles.header}>
               <Image
@@ -113,6 +106,14 @@ export default function Home() {
                 <Text style={styles.musicText}>Music</Text>
               </TouchableOpacity>
             </View>
+            
+      <FlatList
+        data={[{ id: "home" }]}
+        keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 180 }}
+        renderItem={() => (
+          <>
                         {/* Media Grid */}
 
             <FlatList
