@@ -4,7 +4,9 @@ const styles= StyleSheet.create({
     container:{
         flex:1,
         backgroundColor: '#121212',
+        overflow:"visible",
     },
+    // header
     header:{
         flexDirection:'row',
         alignItems:'center',
@@ -45,6 +47,7 @@ const styles= StyleSheet.create({
         fontFamily:'Roboto',
         color:'white'
     },
+    // media item card
     mediaItemCard:{
         flex: 1,
         flexDirection: 'row',
@@ -67,26 +70,140 @@ const styles= StyleSheet.create({
         flex: 1,
         paddingHorizontal: 10,
     },
+    sectionTitle: {
+        color: "#fff",
+        fontSize: 24,
+        fontWeight: "700",
+        marginHorizontal: 16,
+        marginTop: 25,
+        marginBottom: 15,
+      },
+
+    // Recents List
+
+    recentCard:{
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor: '#181818',
+        margin: 8,
+        borderRadius: 8,
+        alignItems: 'center',
+        overflow: 'hidden',
+        height: 70,
+    },
+    recentImage:{
+        width: 50,
+        height: 50,
+        resizeMode:'stretch'
+    },
+    recentText:{
+        color: '#ffffff',
+        fontSize: 14,
+        fontWeight: '600',
+        marginBottom: 2,
+    },
+    recentSubtitleText:{
+        color: '#B3B3B3',
+        fontSize: 12,
+        marginTop: 2,
+    },
+
+    // Recommended Stations
+    recommendationsList: {
+        paddingHorizontal: 16,
+    },
+
+    recommendationCard: {
+        width: 150,
+        marginRight: 18,
+    },
+
+    recommendationImage: {
+        width: 150,
+        height: 150,
+        borderRadius: 8,
+    },
+
+    recommendationTitle: {
+        color: "#fff",
+        fontSize: 15,
+        fontWeight: "700",
+        marginTop: 10,
+    },
+
+    recommendationSubtitle: {
+        color: "#B3B3B3",
+        fontSize: 13,
+        marginTop: 4,
+        lineHeight: 18,
+    },
+
+    // Mini Player
+    miniPlayer: {
+        position: "absolute",
+        left: 8,
+        right: 8,
+        bottom: 88,
+        height: 64,
+        backgroundColor: "#751323",
+        borderRadius: 8,
+        flexDirection: "row",
+        alignItems: "center",
+        paddingHorizontal: 10,
+       zIndex: 5,
+       },
+    miniImage: {
+        width: 48,
+        height: 48,
+        borderRadius: 4,
+    },
+    miniInfo: {
+        flex: 1,
+        marginLeft: 10,
+    },
+
+    miniTitle: {
+        color: "#fff",
+        fontSize: 14,
+        fontWeight: "600",
+    },
+    miniArtist: {
+        color: "#D9D9D9",
+        fontSize: 12,
+        marginTop: 2,
+    },
+     miniIcon: {
+        marginHorizontal: 8,
+    },
+
+    // Bottom Bar
+    gradient: {
+       position: "absolute",
+       left: 0,
+       right: 0,
+       bottom: 88,
+       height: 60,
+    },
     bottomBar: {
-        position: 'absolute',
+        position: "absolute",
         bottom: 0,
         left: 0,
         right: 0,
-        height:100,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        backgroundColor: '#121212', 
+        height: 88,
+        flexDirection: "row",
+        justifyContent: "space-around",
+        alignItems: "center",
+        backgroundColor: "rgba(18,18,18,0.82)",
+        borderTopWidth: 0.5,
+        borderTopColor: "rgba(255,255,255,0.08)",
         zIndex: 2,
-        elevation:20,
     },
-    gradient: {
-        position: 'absolute',
+    barShadow: {
+        position: "absolute",
+        top: 0,
         left: 0,
         right: 0,
-        bottom: 90,
-        height: 70,
-        zIndex: 10,
+        height: 25,
     },
     tab: {
         alignItems: 'center',

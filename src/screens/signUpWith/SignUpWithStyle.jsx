@@ -51,6 +51,16 @@ emailInput:{
     borderColor:'#535353',
     height:50,
     width:'90%',
+    color:'white',
+},
+emailInputError: {
+  borderColor: 'red',
+  borderWidth: 2,
+},
+errorText: {
+  color: 'red',
+  marginLeft: 20,
+  marginTop: 5,
 },
 signUpWithText:{
     fontSize: 16,

@@ -3,13 +3,60 @@ import styles from './LoginStyle';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { useState } from 'react';
-
+import { auth, db } from "../../../firebase.config";
+import {
+  collection,
+  query,
+  where,
+  getDocs,
+} from "firebase/firestore";
+import { sendSignInLinkToEmail } from "firebase/auth";
+import * as Linking from "expo-linking";
 
 
 export default function Login ({navigation}){
 
   const [email, setEmail] = useState('');
   const [error, setError] = useState(false);
+
+  const actionCodeSettings = {
+  url: "http://localhost:8081/finishSignIn",
+  handleCodeInApp: true,
+};
+
+  const sendEmailLink = async () => {
+  if (!email.trim()) {
+    setError(true);
+    return;
+  }
+
+  try {
+    const q = query(
+      collection(db, "users"),
+      where("email", "==", email)
+    );
+
+    const snapshot = await getDocs(q);
+
+    if (snapshot.empty) {
+      alert("Account doesn't exist. Please Sign Up.");
+      return;
+    }
+
+    await sendSignInLinkToEmail(
+      auth,
+      email,
+      actionCodeSettings
+    );
+
+    localStorage.setItem("emailForSignIn", email);
+
+    alert("Login link sent! Check your email.");
+  } catch (error) {
+    alert(error.message);
+    console.log(error);
+  }
+};
     return (
 
     <View style={styles.container}>
@@ -40,13 +87,7 @@ export default function Login ({navigation}){
       )}
 
       <TouchableOpacity style= {styles.button1}
-      onPress={() => {
-      if (email === '') {
-       setError(true);
-      }else{
-       navigation.navigate('Home');
-      }
-      }}>
+      onPress={sendEmailLink}>
         <Text style={[styles.buttonText, {color:'black'}]}>Continue</Text>
        </TouchableOpacity>
  
